@@ -1,0 +1,20 @@
+(defun natp (n)
+  "Checks that the input is a natural number"
+  (and (integerp n) (> n 0))
+)
+
+(defun songp (song)
+  "Checks that the song is well formed (correct number and type of information)"
+  (and (listp song)
+       (= (length song) 6)
+       (natp (first song))
+       (stringp (second song))
+       (stringp (third song))
+       (natp (fourth song))
+       (>= (fourth song) 1900)
+       (natp (fifth song))
+       (rationalp (sixth song))
+       (>= (sixth song) 0)
+       (<= (sixth song) 5)
+  )
+)
